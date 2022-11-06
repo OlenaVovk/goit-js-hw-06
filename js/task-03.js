@@ -38,4 +38,4 @@ ulGalleryEl.insertAdjacentHTML('beforeend', imageEl);
 
 //images.forEach((image, i) => {
  // ulGalleryEl.insertAdjacentHTML('beforeend',`<li class="item"><img src="${images[i].url}" alt="${images[i].alt}" width= "400"/></li>`);
-//});
+//}); - але додає не за 1 раз???
