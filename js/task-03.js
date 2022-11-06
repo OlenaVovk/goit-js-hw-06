@@ -23,7 +23,19 @@ const images = [
 ];
 
 const ulGalleryEl = document.querySelector('.gallery');
+const arrImg = [];
 
 images.forEach((image, i) => {
-  ulGalleryEl.insertAdjacentHTML('beforeend',`<li class="item"><img src="${images[i].url}" alt="${images[i].alt}" width= "400"/></li>`);
+arrImg.push(`<li class="item"><img src="${images[i].url}" alt="${images[i].alt}" width= "400"/></li>`);
+return arrImg;
 });
+
+const imageEl = arrImg.join('');
+
+ulGalleryEl.insertAdjacentHTML('beforeend', imageEl);
+
+
+
+//images.forEach((image, i) => {
+ // ulGalleryEl.insertAdjacentHTML('beforeend',`<li class="item"><img src="${images[i].url}" alt="${images[i].alt}" width= "400"/></li>`);
+//});
