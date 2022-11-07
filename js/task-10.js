@@ -65,7 +65,7 @@ function createBoxes(amount){
     }
   } while (elements.length < parseInt(amount));
 
-  console.log(elements.length); 
+  console.log("elements.length:", elements.length); 
   divEl.append(...elements);
 }
 
