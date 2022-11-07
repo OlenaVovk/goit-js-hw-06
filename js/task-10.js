@@ -13,41 +13,58 @@ function getRandomHexColor() {
 }
 
 
-const btnDestroyEl = document.querySelector("[data-create]");
-console.log(btnDestroyEl);
-const btnCreateEl = document.querySelector("[data-destroy]");
+const btnCreateEl = document.querySelector("[data-create]");
 console.log(btnCreateEl);
+const btnDestroyEl = document.querySelector("[data-destroy]");
+console.log(btnDestroyEl);
 const inputEl = document.querySelector('[type="number"]');
 console.log(inputEl);
 const divEl = document.getElementById("boxes");
 console.log(divEl);
 
-btnCreateEl.addEventListener('click', delEventHendler);
-btnDestroyEl.addEventListener('click', addEventHendler);
-
-function addEventHendler () {
-const amount = inputEl.value;
-console.log(amount);
-createBoxes(amount);
-}
-
-function delEventHendler () {
-const amount = 0;
-inputEl.value = 0;
-console.log(amount);
-}
-
-
-function createBoxes(amount){
 const elements = [];
 
-do {
-  const divCollectionEl = document.createElement("div");
-  divCollectionEl.style.width = "30px";
-  elements.push(divCollectionEl);
-} while (elements.length < parseInt(amount));
+btnCreateEl.addEventListener('click', addEventHendler);
+btnDestroyEl.addEventListener('click', delEventHendler);
 
- console.log(elements);
+
+function addEventHendler () {
+  let amount = inputEl.value;
+  
+  if (amount <= 0) {
+    alert('Введіть адекватне число! ^_^');
+  } else {
+    createBoxes(amount);
+    inputEl.value = "";
+    inputEl.Placeholder = '0';
+  }
+  
+}
+
+function delEventHendler () { 
+  inputEl.value = '';
+  divEl.innerHTML = '';
+}
+
+function createBoxes(amount){
+  do {
+    const divCollectionEl = document.createElement('div');
+
+    divCollectionEl.style.width = "20px";
+    divCollectionEl.style.height = "20px";
+    divCollectionEl.style.marginTop = "20px";
+    divCollectionEl.style.backgroundColor = getRandomHexColor();
+
+    elements.unshift(divCollectionEl);
+
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      element.style.width = parseInt(element.style.width) + 10 + "px";
+      element.style.height = parseInt(element.style.height) + 10 + "px";
+    }
+  } while (elements.length < parseInt(amount));
+    
+  divEl.append(...elements);
 }
 
 
