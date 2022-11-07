@@ -29,6 +29,7 @@ btnDestroyEl.addEventListener('click', delEventHendler);
 
 
 function addEventHendler () {
+  
   let amount = inputEl.value;
   
   if (amount <= 0) {
@@ -36,7 +37,6 @@ function addEventHendler () {
   } else {
     createBoxes(amount);
     inputEl.value = "";
-    inputEl.Placeholder = '0';
   }
   
 }
@@ -44,6 +44,7 @@ function addEventHendler () {
 function delEventHendler () { 
   inputEl.value = '';
   divEl.innerHTML = '';
+  location.reload();
 }
 
 function createBoxes(amount){
@@ -63,7 +64,8 @@ function createBoxes(amount){
       element.style.height = parseInt(element.style.height) + 10 + "px";
     }
   } while (elements.length < parseInt(amount));
-    
+
+  console.log(elements.length); 
   divEl.append(...elements);
 }
 
