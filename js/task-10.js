@@ -31,8 +31,8 @@ btnDestroyEl.addEventListener('click', delEventHendler);
 function addEventHendler () {
   const amount = inputEl.value;
   
-  if (amount <= 0) {
-    alert('Введіть адекватне число! ^_^');
+  if (amount <= 0 || amount > 100 ) {
+    alert('Введіть число від 1 до 100! ^_^');
   } else {
     createBoxes(amount);
     inputEl.value = "";
