@@ -41,20 +41,22 @@ function addEventHendler () {
 
 function delEventHendler () { 
   location.reload();
+  //inputEl.value = 0;
+  //divEl.innerHTML = "";
 }
 
 function createBoxes(amount){
   do {
     const divCollectionEl = document.createElement('div');
 
-    divCollectionEl.style.width = "20px";
-    divCollectionEl.style.height = "20px";
+    divCollectionEl.style.width = "30px";
+    divCollectionEl.style.height = "30px";
     divCollectionEl.style.marginTop = "20px";
     divCollectionEl.style.backgroundColor = getRandomHexColor();
 
     elements.unshift(divCollectionEl);
 
-    for (let i = 0; i < elements.length; i++) {
+    for (let i = 1; i < elements.length; i++) {
       const element = elements[i];
       element.style.width = parseInt(element.style.width) + 10 + "px";
       element.style.height = parseInt(element.style.height) + 10 + "px";
