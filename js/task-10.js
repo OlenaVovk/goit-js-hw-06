@@ -33,7 +33,7 @@ function addEventHendler () {
   
   if (amount <= 0 || amount > 100 ) {
     alert('Введіть число від 1 до 100! ^_^');
-    inputEl.value = ""
+    inputEl.value = "";
   } else {
     createBoxes(amount);
     inputEl.value = "0";
