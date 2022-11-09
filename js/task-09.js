@@ -10,19 +10,18 @@ function getRandomHexColor() {
 }
 
 const btnEl = document.querySelector(".change-color");
-console.log(btnEl);
 const bodyEl = document.querySelector("body");
-console.log(bodyEl);
 const spanEl = document.querySelector(".color");
-console.log(spanEl);
+
+spanEl.textContent = '#ffffff';
 
 btnEl.addEventListener('click',clickColorHandler);
 
 function clickColorHandler() {
-const a = getRandomHexColor();
-bodyEl.style.backgroundColor = `${a}`;
-spanEl.textContent = `${a}`;
-console.log(a);
+  const a = getRandomHexColor();
+  bodyEl.style.backgroundColor = `${a}`;
+  spanEl.textContent = `${a}`;
+  console.log(a);
 }
 
 
