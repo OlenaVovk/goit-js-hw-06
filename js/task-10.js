@@ -21,22 +21,24 @@ const inputEl = document.querySelector('[type="number"]');
 console.log(inputEl);
 const divEl = document.getElementById("boxes");
 console.log(divEl);
-
 const elements = [];
+
 
 btnCreateEl.addEventListener('click', addEventHendler);
 btnDestroyEl.addEventListener('click', delEventHendler);
 
 
 function addEventHendler () {
-  const amount = inputEl.value;
+  let amount = inputEl.value;
   
-  if (amount <= 0 || amount > 100 ) {
+  if (amount < 1 || amount > 100 ) {
     alert('Введіть число від 1 до 100! ^_^');
     inputEl.value = "";
   } else {
     createBoxes(amount);
-    inputEl.value = "0";
+    inputEl.value = "";
+    
+    console.log(amount);
   }
 }
 
@@ -47,8 +49,8 @@ function delEventHendler () {
 }
 
 function createBoxes(amount){
-  //do {
-    
+  
+  do {
     const divCollectionEl = document.createElement('div');
 
     divCollectionEl.style.width = "30px";
@@ -63,7 +65,7 @@ function createBoxes(amount){
       element.style.width = parseInt(element.style.width) + 10 + "px";
       element.style.height = parseInt(element.style.height) + 10 + "px";
     }
-  //} while (elements.length < parseInt(amount));
+  } while (elements.length < parseInt(amount));
     
   console.log("elements.length:", elements.length); 
   divEl.append(...elements);
