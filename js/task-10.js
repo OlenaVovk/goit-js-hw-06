@@ -47,7 +47,8 @@ function delEventHendler () {
 }
 
 function createBoxes(amount){
-  do {
+  //do {
+    
     const divCollectionEl = document.createElement('div');
 
     divCollectionEl.style.width = "30px";
@@ -62,10 +63,11 @@ function createBoxes(amount){
       element.style.width = parseInt(element.style.width) + 10 + "px";
       element.style.height = parseInt(element.style.height) + 10 + "px";
     }
-  } while (elements.length < parseInt(amount));
-
+  //} while (elements.length < parseInt(amount));
+    
   console.log("elements.length:", elements.length); 
   divEl.append(...elements);
+  
 }
 
 

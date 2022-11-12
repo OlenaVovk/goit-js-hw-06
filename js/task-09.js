@@ -18,10 +18,10 @@ spanEl.textContent = '#ffffff';
 btnEl.addEventListener('click',clickColorHandler);
 
 function clickColorHandler() {
-  const a = getRandomHexColor();
-  bodyEl.style.backgroundColor = `${a}`;
-  spanEl.textContent = `${a}`;
-  console.log(a);
+  const color = getRandomHexColor();
+  bodyEl.style.backgroundColor = color;
+  spanEl.textContent = color;
+  console.log(color);
 }
 
 

@@ -23,20 +23,19 @@ const images = [
 ];
 
 const ulGalleryEl = document.querySelector('.gallery');
-const arrImg = [];
 
-images.forEach((image, i) => {
-  image = `<li class="item"><img src="${images[i].url}" alt="${images[i].alt}" width= "350" height = "210"/></li>`;
-  arrImg.push(image);
-  return arrImg;
-});
-
-const imageEl = arrImg.join('');
-
+const imageEl = images.map(image => `<li class="item"><img src="${image.url}" alt="${image.alt}" width= "350" height = "210"/></li>`).join('');
 ulGalleryEl.insertAdjacentHTML('beforeend', imageEl);
-
-
 
 //images.forEach((image, i) => {
  // ulGalleryEl.insertAdjacentHTML('beforeend',`<li class="item"><img src="${images[i].url}" alt="${images[i].alt}" width= "400"/></li>`);
 //}); - але додає не за 1 раз???
+
+//const arrImg = [];
+//images.forEach((image, i) => {
+//  image = `<li class="item"><img src="${images[i].url}" alt="${images[i].alt}" width= "350" height = "210"/></li>`;
+//  arrImg.push(image);
+//  return arrImg;
+//});
+//const imageEl = arrImg.join('');
+//ulGalleryEl.insertAdjacentHTML('beforeend', imageEl);
