@@ -23,8 +23,8 @@ function handleSubmit (event){
     }
 
     const obj = {
-       email: `${email.value}`,
-       password: `${password.value}`,
+       email: email.value,
+       password: password.value,
     }
 
     console.log(obj);

@@ -26,36 +26,28 @@ let click = 0;
 let amount = 0;
 
 btnCreateEl.addEventListener('click', addEventHendler);
-
 btnDestroyEl.addEventListener('click', delEventHendler);
 
 
- 
-
-
-
-
 function addEventHendler () {
-  amount =  inputEl.value;
-
+  amount = parseInt(inputEl.value);
   click =  click + 1;
-  console.log('click:', click);
 
+  console.log('click:', click);
   console.log('inputEl.value', inputEl.value);
+  console.log('amount', amount);
   
   if (amount < 1 || amount > 100 ) {
     alert('Введіть число від 1 до 100! ^_^');
     inputEl.value = "";
+
   }  else { if (click > 1 ) {
-    divEl.innerHTML = "";
-  }
-    amount = parseInt(inputEl.value);
+      divEl.innerHTML = "";
+    }
+    
     createBoxes(amount);
     inputEl.value = "";  
   }
-
-  console.log('amount', amount);
-  
 }
 
 function delEventHendler () { 
@@ -65,7 +57,7 @@ function delEventHendler () {
 }
 
 function createBoxes(amount){
-console.log("elements.length1:", elements.length); 
+  console.log("elements.length-1:", elements.length); 
 
   do {
     const divCollectionEl = document.createElement('div');
@@ -85,8 +77,7 @@ console.log("elements.length1:", elements.length);
 
   } while (elements.length < parseInt(amount));
     
-
-  console.log("elements.length2:", elements.length); 
+  console.log("elements.length-2:", elements.length); 
   divEl.append(...elements);
   elements.length = 0;
 }
