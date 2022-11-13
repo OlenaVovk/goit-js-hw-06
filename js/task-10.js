@@ -37,9 +37,10 @@ function addEventHendler () {
   console.log('inputEl.value', inputEl.value);
   console.log('amount', amount);
   
-  if (amount < 1 || amount > 100 ) {
+  if (amount < 1 || amount > 100 || inputEl.value === "") {
     alert('Введіть число від 1 до 100! ^_^');
     inputEl.value = "";
+    divEl.innerHTML = "";
 
   }  else { if (click > 1 ) {
       divEl.innerHTML = "";
