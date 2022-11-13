@@ -12,15 +12,11 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-
 const btnCreateEl = document.querySelector("[data-create]");
-console.log(btnCreateEl);
 const btnDestroyEl = document.querySelector("[data-destroy]");
-console.log(btnDestroyEl);
 const inputEl = document.querySelector('[type="number"]');
-console.log(inputEl);
+inputEl.focus();
 const divEl = document.getElementById("boxes");
-console.log(divEl);
 const elements = [];
 let click = 0;
 let amount = 0;
@@ -39,22 +35,24 @@ function addEventHendler () {
   
   if (amount < 1 || amount > 100 || inputEl.value === "") {
     alert('Введіть число від 1 до 100! ^_^');
-    inputEl.value = "";
-    divEl.innerHTML = "";
+    delEventHendler ();
 
   }  else { if (click > 1 ) {
       divEl.innerHTML = "";
     }
     
-    createBoxes(amount);
-    inputEl.value = "";  
+  createBoxes(amount);
+  inputEl.value = ""; 
+  inputEl.focus();
   }
 }
 
 function delEventHendler () { 
-  location.reload();
-  //inputEl.value = 0;
-  //divEl.innerHTML = "";
+  //location.reload();
+  click = 0;
+  inputEl.value = "";
+  divEl.innerHTML = "";
+  inputEl.focus();
 }
 
 function createBoxes(amount){
